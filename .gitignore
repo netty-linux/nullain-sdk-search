@@ -1,0 +1,24 @@
+# Rust
+/target/
+**/target/
+Cargo.lock.bak
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+*.so
+*.pyd
+
+# maturin
+nullain-search-py/target/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

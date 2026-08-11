@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["nullain-search-core", "nullain-search-py"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/nullain/nullain-sdk-search"
+
+[profile.release]
+lto = true

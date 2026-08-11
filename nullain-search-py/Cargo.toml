@@ -1,0 +1,15 @@
+[package]
+name = "nullain-search-py"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "PyO3 bindings for nullain-search-core, published as the `nullain_search` Python module."
+
+[lib]
+name = "nullain_search"
+crate-type = ["cdylib"]
+
+[dependencies]
+nullain-search-core = { path = "../nullain-search-core" }
+pyo3 = { version = "0.22", features = ["abi3-py312"] }
