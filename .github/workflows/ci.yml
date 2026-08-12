@@ -41,3 +41,30 @@ jobs:
 
       - name: Build wheel
         run: maturin build --release -m nullain-search-py/Cargo.toml
+
+  # Proves this repo builds from a cold start — no Swatinem/rust-cache, no
+  # cargo registry/target cache. `test` above is right for day-to-day CI
+  # speed, but a cache hit can mask a genuinely broken build (a Cargo.lock
+  # drift, a toolchain assumption that only holds with stale artifacts).
+  clean-install:
+    name: Clean build (no cache)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: cargo build --workspace (cold)
+        run: cargo build --workspace
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install maturin
+        run: pip install maturin
+
+      - name: Build wheel (cold)
+        run: maturin build --release -m nullain-search-py/Cargo.toml
