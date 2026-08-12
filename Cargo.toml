@@ -6,7 +6,7 @@ members = ["nullain-search-core", "nullain-search-py"]
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-repository = "https://github.com/nullain/nullain-sdk-search"
+repository = "https://github.com/netty-linux/nullain-sdk-search"
 
 [profile.release]
 lto = true

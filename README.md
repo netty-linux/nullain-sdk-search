@@ -1,8 +1,8 @@
 # nullain-sdk-search
 
-Local full-text search engine for [`nullain-agent-sdk`](https://github.com/nullain/nullain-agent-sdk):
-a pure-Rust core (`nullain-search-core`, tantivy-backed BM25 search) plus
-thin PyO3 bindings (`nullain-search-py`, importable as `nullain_search`).
+Local full-text search engine for `nullain-agent-sdk`: a pure-Rust core
+(`nullain-search-core`, tantivy-backed BM25 search) plus thin PyO3
+bindings (`nullain-search-py`, importable as `nullain_search`).
 
 v0.1 scope: index local text files, BM25 search, fetch by source. No web
 search, no vector/semantic search, no file watching or incremental
